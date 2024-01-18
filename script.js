@@ -1,55 +1,55 @@
 
-//ESTO LO AGREGAR
-alert("hola")
-alert("Bienvenid@!")
+function iva(precio) {
+    var precio = precio * 0.30
+    return precio
+}
 
-let pass = "1234"
-let validoPass = false
+function verCatalogo() {
+    alert("¡Bienvenido al catálogo!\n1. BMW A\n2. Mercedez B\n3. Toyota\nX PARA SALIR ");
+}
 
-
-//Login
-for (i = 3; i >= 0; i--){
-    let passIngresado = prompt("Ingresa tu clave: ");
-    if (pass == passIngresado){
-        alert("Usuario correcto!")
-        validoPass = true
-        break 
-    } else{
-        alert("Error. Ahora tiene: " + i + " intentos")
+function comprar() {
+    var producto = prompt("Ingrese el número del producto que desea comprar: \n1. BMW A\n2. Mercedez B\n3. Toyota\nX PARA SALIR ");
+    while(producto != "X" && producto != "x"){
+    
+        switch (producto) {
+            case "1":
+                let valorBmw = 1000
+                let ivaBmw = iva(valorBmw)
+                let totalBmw = valorBmw + ivaBmw
+                alert("El valor del iva es "+ivaBmw+" Total a pagar BMW: "+ totalBmw)
+                break;
+            case "2":
+                    let valorMerce = 500
+                    let ivaMerce = iva(valorMerce)
+                    let totalMerce = valorMerce + ivaMerce
+                    alert("El valor del iva es "+ivaMerce+" Total a pagar Mercedez benz1: "+ totalMerce)
+            break;
+            case "3":
+                    let valorToyo = 150
+                    let ivaToyo = iva(valorToyo)
+                    let totalToyo = valorToyo + ivaToyo
+                    alert("El valor del iva es "+ivaToyo+" Total a pagar Toyota: "+ totalToyo)
+            break;1
+        }
+        break
     }
 }
 
- function descuento(a){
-    let desc = a - 0.50
-    return desc
- }
+function menuBienvenida(){
+    var menu = prompt("¡Bienvenido, Selecciona una opcion!\n1. Ver catalogo\n2. Comprar\nX PARA SALIR");
+    while(menu != "X" && menu != "x"){
 
- function PrecioTotal(a){
-    let iva = 1.08
-    let total = a + iva
- }
-
-let cuentaDinero = 100000
-if(validoPass){
-    let carro = prompt("Que carro desas comprar \n1 - Toyota TXL \n2 - Mercedez Benz Cla200 \n3 - BMW M4s \n4 - Onix Turbo \n X para salir" )
-    
-        switch (carro) {
+        switch (menu) {
             case "1":
-                valorToyota = 100
-                alert("Haz elegido una Toyota TXL, con un valor de: $" + valorToyota)
-                alert("Por tu compra tu descuento es del $" + descuento(valorToyota))
-                break
+                verCatalogo()
+                var menu = prompt("¡Bienvenido, Selecciona una opcion!\n1. Ver catalogo\n2. Comprar\nX PARA SALIR");
+                break;
             case "2":
-                valorMercedez = 200
-                alert("Haz elegido un  Mercedez Benz Cla200, con un valor de: $" + valorMercedez)
-                alert("Por tu compra tu descuento es del $" + descuento(valorMercedez))
-                let carro = prompt("Que carro desas comprar \n1 - Toyota TXL \n2 - Mercedez Benza Cla200 \n3 - BMW M4s \n4 - Onix Turbo \nX para salir " )   
-                break
-            }
-
-            
-
-            
-        
-        
+                comprar()
+                var menu = prompt("¡Bienvenido, Selecciona una opcion!\n1. Ver catalogo\n2. Comprar\nX PARA SALIR");
+                break;
+        }
+    }
 }
+menuBienvenida()
