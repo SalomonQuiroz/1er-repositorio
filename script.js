@@ -1,6 +1,6 @@
 
-
-
+//ESTO LO AGREGAR
+alert("hola")
 alert("Bienvenid@!")
 
 let pass = "1234"
